@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Apo\Models\User;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Request\RegisterRequest;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {

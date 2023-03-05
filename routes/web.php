@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**
-     * Home Routes
+     * Root Routes
      */
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', 'LoginController@show')->name('login.show');
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -36,6 +36,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     });
 
     Route::group(['middleware' => ['auth']], function() {
+        /**
+         * Home Routes
+         */
+        Route::get('/home', 'HomeController@index')->name('home.index');
+
         /**
          * Logout Routes
          */

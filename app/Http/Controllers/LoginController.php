@@ -15,7 +15,11 @@ class LoginController extends Controller
      */
     public function show()
     {
-        return view('auth.login');
+        if (Auth::check()) {
+            return redirect()->route('home.index');
+        } else {
+            return view('auth.login');
+        }
     }
 
     /**
@@ -31,7 +35,7 @@ class LoginController extends Controller
 
         if(!Auth::validate($credentials)):
             return redirect()->to('login')
-                ->withErrors(trans('auth.failed'));
+                ->withErrors(trans('auth'));
         endif;
 
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
@@ -51,6 +55,6 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user) 
     {
-        return redirect()->intended();
+        return redirect()->route('home.index');
     }
 }

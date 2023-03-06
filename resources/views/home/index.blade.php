@@ -3,14 +3,26 @@
 @section('content')
     <div class="bg-light p-5 rounded">
         @auth
-        <h1>Dashboard</h1>
-        <p class="lead">Only authenticated users can access this section.</p>
-        <a class="btn btn-lg btn-primary" href="https://codeanddeploy.com" role="button">View more tutorials here &raquo;</a>
+            <h1>Data</h1>
+            <div id="my-div"></div>
         @endauth
-
-        @guest
-        <h1>Homepage</h1>
-        <p class="lead">Your viewing the home page. Please login to view the restricted data.</p>
-        @endguest
     </div>
+
+    <script>
+        function recursively_ajax(){
+            $.ajax({
+                type:'POST',
+                url:"/api/subscribe_robot/1",
+                data:{topic: 'monitor/water'},
+                success: function(data){
+                    $('#my-div').text(data.message[0]);
+                    setTimeout(recursively_ajax, 3000)
+                },
+                error: function(request, status, error){
+                    setTimeout(recursively_ajax, 3000)
+                }
+            });
+        }
+        recursively_ajax();
+    </script>
 @endsection

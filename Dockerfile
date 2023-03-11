@@ -1,8 +1,5 @@
 FROM php:8.2.3-fpm
 
-# Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/
-
 # Set working directory
 WORKDIR /var/www
 
@@ -34,35 +31,30 @@ RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
 RUN docker-php-ext-configure gd --enable-gd --with-freetype=/usr/include/
 RUN docker-php-ext-install gd
 
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+
+# Copy existing application directory permissions
+COPY --chown=www:www . /var/www
+
 # setup FE
 RUN npm install
 RUN npm rebuild node-sass
 RUN npm run build
 
-# Copy env prod to container
-RUN mv .env.example .env
-
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
 # Reset cache
 RUN php artisan optimize
+RUN php artisan cache:clear
 RUN php artisan route:clear
 RUN php artisan route:cache
 RUN php artisan config:clear
 RUN php artisan config:cache
 RUN php artisan view:clear
 RUN php artisan view:cache
-
-# Add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
-
-# Copy existing application directory contents
-COPY . /var/www
-
-# Copy existing application directory permissions
-COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www

@@ -34,12 +34,17 @@ RUN docker-php-ext-install gd
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Add user for laravel application
+# Add user for laravel applicatDion
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
+
+# This are production settings, I'm running with 'no-dev', adjust accordingly 
+# if you need it
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN composer install
 
 # setup FE
 RUN npm install

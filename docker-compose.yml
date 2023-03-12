@@ -16,6 +16,7 @@ services:
       SERVICE_TAGS: dev
     working_dir: /var/www
     volumes:
+      - /var/www/vendor
       - ./:/var/www
       - ./dockerconfig/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
@@ -32,7 +33,6 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
-      - /var/www/vendor
       - ./dockerconfig/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
@@ -46,10 +46,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_HOST: ${DB_USERNAME}
+      MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:

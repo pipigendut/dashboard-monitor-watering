@@ -46,10 +46,10 @@ COPY --chown=www:www . /var/www
 
 RUN chown -R $USER:www-data /var/www/storage
 RUN chown -R $USER:www-data /var/www/bootstrap/cache
-RUN chmod -R 775 /var/www/bootstrap/cache
-RUN chmod -R 755 /var/www/bootstrap/cache
-RUN chmod -R 775 /var/www/storage
-RUN chmod -R 755 /var/www/storage
+RUN chown -R $USER:www-data /var/www/public
+RUN chmod -R 777 /var/www/bootstrap/cache
+RUN chmod -R 777 /var/www/storage
+RUN chmod -R 777 /var/www/public
 
 # This are production settings, I'm running with 'no-dev', adjust accordingly 
 # if you need it
@@ -70,9 +70,6 @@ RUN php artisan config:clear
 RUN php artisan config:cache
 RUN php artisan view:clear
 RUN php artisan view:cache
-
-# Change current user to www
-USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

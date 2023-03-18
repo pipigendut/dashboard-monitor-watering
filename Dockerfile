@@ -44,6 +44,11 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
 
+RUN chown -R $USER:www-data /var/www/storage
+RUN chown -R $USER:www-data /var/www/bootstrap/cache
+RUN chmod -R 775 /var/www/bootstrap/cache
+RUN chmod -R 755 /var/www/storage
+
 # This are production settings, I'm running with 'no-dev', adjust accordingly 
 # if you need it
 ENV COMPOSER_ALLOW_SUPERUSER=1

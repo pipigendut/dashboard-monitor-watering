@@ -18,7 +18,7 @@ services:
     volumes:
       - /var/www/vendor
       - /var/www/node_modules
-      - /var/www/bootsrap/cache
+      - /var/www/bootstrap/cache
       - ./:/var/www
       - ./dockerconfig/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:

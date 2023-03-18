@@ -47,6 +47,8 @@ COPY --chown=www:www . /var/www
 RUN chown -R $USER:www-data /var/www/storage
 RUN chown -R $USER:www-data /var/www/bootstrap/cache
 RUN chmod -R 775 /var/www/bootstrap/cache
+RUN chmod -R 755 /var/www/bootstrap/cache
+RUN chmod -R 775 /var/www/storage
 RUN chmod -R 755 /var/www/storage
 
 # This are production settings, I'm running with 'no-dev', adjust accordingly 

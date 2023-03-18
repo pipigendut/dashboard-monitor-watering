@@ -31,5 +31,16 @@ docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt
 docker-compose restart
 ```
 
+### Config DB
+
+Do below if error not allowed ip
+```
+mysql -p
+
+
+CREATE USER 'user'@'host' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'host' WITH GRANT OPTION;
+```
+
 ## License
 The application is open-source

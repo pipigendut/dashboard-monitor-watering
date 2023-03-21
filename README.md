@@ -9,10 +9,19 @@ Login is required to see dashboard.
 ## How to use
 
 ### Configuration
-- Touch .env.production based on .env.example
+- Touch .env based on .env.example
 
 ### Running
-Build docker container
+
+Setup cerbot
+1. commented nginx conf for ssl
+2. RUN
+```bash
+docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d pipigendut.tech
+docker compose run --rm certbot certonly --standalone --preferred-challenges http -d pipigendut.tech
+```
+3. uncommented nginx conf for ssl
+4. RUN
 ```bash
 docker-compose up -d
 ```
@@ -41,6 +50,11 @@ mysql -p
 CREATE USER 'user'@'host' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'host' WITH GRANT OPTION;
 ```
+
+## Ref
+https://mindsers.blog/post/https-using-nginx-certbot-docker/
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04
+https://eff-certbot.readthedocs.io/en/stable/install.html
 
 ## License
 The application is open-source

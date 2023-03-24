@@ -80,6 +80,7 @@ services:
       - ./certbot/conf/:/mosquitto/certs/
     ports:
       - 1884:1883
+      - 8883:8883
       - 9002:9001
     networks:
       - app-network

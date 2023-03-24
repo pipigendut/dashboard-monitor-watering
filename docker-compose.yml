@@ -77,7 +77,7 @@ services:
     restart: always
     volumes:
       - ./dockerconfig/mosquitto/config/:/mosquitto/config/
-      - ./certbot/conf/:/etc/letsencrypt/
+      - ./certbot/conf/:/mosquitto/certs/
     ports:
       - 1884:1883
       - 9002:9001

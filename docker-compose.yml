@@ -81,6 +81,7 @@ services:
     ports:
       - 1884:1883
       - 8883:8883
+      - 8083:8083
       - 9002:9001
     networks:
       - app-network

@@ -60,6 +60,7 @@ RUN composer install
 RUN npm install
 RUN npm rebuild node-sass
 RUN npm run build
+RUN npx mix
 
 # Reset cache
 RUN php artisan optimize

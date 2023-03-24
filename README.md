@@ -49,6 +49,7 @@ mysql -p
 
 CREATE USER 'user'@'host' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'host' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 ```
 
 ## Ref

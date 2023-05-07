@@ -25,7 +25,24 @@ docker compose run --rm certbot certonly --standalone --preferred-challenges htt
 ```bash
 docker-compose up -d
 ```
+5. RUN
+```bash
+docker compose run --rm app composer install
 
+docker compose run --rm app npm install
+docker compose run --rm app npm rebuild node-sass
+docker compose run --rm app npm run build
+docker compose run --rm app npx mix
+
+docker compose run --rm app php artisan optimize
+docker compose run --rm app php artisan cache:clear
+docker compose run --rm app php artisan route:clear
+docker compose run --rm app php artisan route:cache
+docker compose run --rm app php artisan config:clear
+docker compose run --rm app php artisan config:cache
+docker compose run --rm app php artisan view:clear
+docker compose run --rm app php artisan view:cache
+```
 ## Additional
 ### Authentication mqtt
 Change user password / create a new user
@@ -47,8 +64,8 @@ Do below if error not allowed ip
 mysql -p
 
 
-CREATE USER 'user'@'host' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'host' WITH GRANT OPTION;
+CREATE USER 'root'@''172.30.0.2' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@''172.30.0.2' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 

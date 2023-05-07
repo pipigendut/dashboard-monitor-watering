@@ -1,7 +1,7 @@
 FROM php:8.2.3-fpm
 
 # Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/project/
+COPY composer.lock composer.json /var/www/
 
 # Set working directory
 WORKDIR /var/www
@@ -54,23 +54,6 @@ RUN chmod -R 777 /var/www/public
 # This are production settings, I'm running with 'no-dev', adjust accordingly 
 # if you need it
 ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN composer install
-
-# setup FE
-RUN npm install
-RUN npm rebuild node-sass
-RUN npm run build
-RUN npx mix
-
-# Reset cache
-RUN php artisan optimize
-RUN php artisan cache:clear
-RUN php artisan route:clear
-RUN php artisan route:cache
-RUN php artisan config:clear
-RUN php artisan config:cache
-RUN php artisan view:clear
-RUN php artisan view:cache
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

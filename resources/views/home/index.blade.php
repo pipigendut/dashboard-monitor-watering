@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div id="home"></div>
     <div id="my-div"></div>
     <iot-subscriber> </iot-subscriber>
 @endsection

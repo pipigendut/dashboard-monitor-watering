@@ -46,22 +46,25 @@
         }
     }
 
-    mqttClient.subscribe('1/monitor/water')
-    mqttClient.subscribe('1/monitor/ultra-sonic')
-    mqttClient.subscribe('1/monitor/soil-mosture')
-    mqttClient.subscribe('1/monitor/rain-censor')
+    if (document.getElementById("home")) {    
 
-    mqttClient.on('message', function (topic, message) {
-        // called each time a message is received
-        if (topic == '1/monitor/water') {
-            $('#water-flow').text(message);
-        } else if (topic == '1/monitor/ultra-sonic') {
-            $('#ultra-sonic').text(message);
-        } else if (topic == '1/monitor/soil-mosture') {
-            $('#soil-mosture').text(message);
-        } else if (topic == '1/monitor/rain-censor'){
-            $('#rain-censor').text(message);
-        }
-        console.log('Received message:', topic, message.toString());
-    });
+        mqttClient.subscribe('1/monitor/water')
+        mqttClient.subscribe('1/monitor/ultra-sonic')
+        mqttClient.subscribe('1/monitor/soil-mosture')
+        mqttClient.subscribe('1/monitor/rain-censor')
+
+        mqttClient.on('message', function (topic, message) {
+            // called each time a message is received
+            if (topic == '1/monitor/water') {
+                $('#water-flow').text(message);
+            } else if (topic == '1/monitor/ultra-sonic') {
+                $('#ultra-sonic').text(message);
+            } else if (topic == '1/monitor/soil-mosture') {
+                $('#soil-mosture').text(message);
+            } else if (topic == '1/monitor/rain-censor'){
+                $('#rain-censor').text(message);
+            }
+            console.log('Received message:', topic, message.toString());
+        });
+    };
 </script>

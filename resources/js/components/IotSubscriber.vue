@@ -5,7 +5,9 @@
                 <div class="card">
                     <div class="card-header">Water Flow</div>
                     <div class="card-body">
-                        <div id="water-flow">-</div>
+                        <div id="water-flow">
+                            <div>-</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -13,7 +15,9 @@
                 <div class="card">
                     <div class="card-header">Ultra Sonic</div>
                     <div class="card-body">
-                        <div id="ultra-sonic">-</div>
+                        <div id="ultra-sonic">
+                            <div>-</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,7 +25,9 @@
                 <div class="card">
                     <div class="card-header">Soil Mosture</div>
                     <div class="card-body">
-                        <div id="soil-mosture">-</div>
+                        <div id="soil-mosture">
+                            <div>-</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -29,7 +35,9 @@
                 <div class="card">
                     <div class="card-header">Rain Censor</div>
                     <div class="card-body">
-                        <div id="rain-censor">-</div>
+                        <div id="rain-censor">
+                            <div>-</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,7 +55,6 @@
     }
 
     if (document.getElementById("home")) {    
-
         mqttClient.subscribe('1/monitor/water')
         mqttClient.subscribe('1/monitor/ultra-sonic')
         mqttClient.subscribe('1/monitor/soil-mosture')
@@ -56,13 +63,17 @@
         mqttClient.on('message', function (topic, message) {
             // called each time a message is received
             if (topic == '1/monitor/water') {
-                $('#water-flow').text(message);
+                $('#water-flow div').remove();
+                $('#water-flow').append(`<div>${message}</div>`);
             } else if (topic == '1/monitor/ultra-sonic') {
-                $('#ultra-sonic').text(message);
+                $('#ultra-sonic div').remove();
+                $('#ultra-sonic').append(`<div>${message}</div>`);
             } else if (topic == '1/monitor/soil-mosture') {
-                $('#soil-mosture').text(message);
+                $('#soil-mosture div').remove();
+                $('#soil-mosture').append(`<div>${message}</div>`);
             } else if (topic == '1/monitor/rain-censor'){
-                $('#rain-censor').text(message);
+                $('#rain-censor div').remove();
+                $('#rain-censor').append(`<div>${message}</div>`);
             }
             console.log('Received message:', topic, message.toString());
         });

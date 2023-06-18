@@ -3,6 +3,9 @@ Application built using Laravel for purpose monitor watering in realtime using m
 Login is required to see dashboard.
 
 ## Prerequisite
+- Laravel v4.4.0
+- PHP v8.2.7
+- Mysql v8.0.32
 - [Docker](https://www.docker.com/) v20.10.22
 - [Docker compose](https://docs.docker.com/compose/) +v2.15.1
 
@@ -11,7 +14,9 @@ Login is required to see dashboard.
 ### Configuration
 - Touch .env based on .env.example
 
-### Running
+### Development
+
+### Running with docker
 
 Setup cerbot
 1. commented nginx conf for ssl
@@ -28,13 +33,12 @@ docker-compose up -d
 5. RUN
 ```bash
 docker compose run --rm app composer install
-
 docker compose run --rm app npm install
 docker compose run --rm app npm rebuild node-sass
 docker compose run --rm app npm run build
 docker compose run --rm app npx mix
 
-docker compose run --rm app php artisan optimize
+docker compose run --rm app php artisan optimize:clear
 docker compose run --rm app php artisan cache:clear
 docker compose run --rm app php artisan route:clear
 docker compose run --rm app php artisan route:cache
@@ -61,11 +65,11 @@ docker-compose restart
 
 Do below if error not allowed ip
 ```
-mysql -p
+mysql -u root -p
 
 
-CREATE USER 'root'@''172.30.0.2' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@''172.30.0.2' WITH GRANT OPTION;
+CREATE USER 'root'@'192.168.96.2' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.96.2' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 

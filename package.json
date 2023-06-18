@@ -6,14 +6,20 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^4.0.0",
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-mix": "^6.0.49",
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
-        "vite": "^4.0.0"
+        "vite": "^4.0.0",
+        "vue": "^3.2.37",
+        "vue-loader": "^16.8.3"
     },
     "dependencies": {
-        "mqtt": "^4.3.7"
+        "buffer": "^6.0.3",
+        "mqtt": "^4.3.7",
+        "precompiled-mqtt": "^4.3.14-beta",
+        "process": "^0.11.10"
     }
 }

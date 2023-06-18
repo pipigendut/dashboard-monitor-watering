@@ -49,6 +49,8 @@ RUN chown -R $USER:www-data /var/www/bootstrap/cache
 RUN chown -R $USER:www-data /var/www/public
 RUN chmod -R 777 /var/www/bootstrap/cache
 RUN chmod -R 777 /var/www/storage
+RUN chmod -R 777 /var/www/storage/logs
+RUN chmod -R 777 /var/www/storage/framework
 RUN chmod -R 777 /var/www/public
 
 # This are production settings, I'm running with 'no-dev', adjust accordingly 

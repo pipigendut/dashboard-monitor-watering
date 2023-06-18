@@ -16,6 +16,10 @@ Login is required to see dashboard.
 
 ### Development
 
+### Running with local
+1. php artisan serve
+2. npm run dev
+
 ### Running with docker
 
 Setup cerbot

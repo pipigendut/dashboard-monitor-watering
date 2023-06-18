@@ -17,13 +17,11 @@
 
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-        <script src="js/subscriber.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     </head>
     <body>
         <div id="app">
             @include('layouts.partials.navbar')
-
             <main class="py-4">
                 @yield('content')
             </main>

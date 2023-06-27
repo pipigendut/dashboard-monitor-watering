@@ -1,0 +1,49 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=IN, ST=Jawa barat, L=Kabupaten Bekasi, O=iot, OU=iot, CN=AlfianMI/emailAddress=sulivian321@gmail.com
+        Validity
+            Not Before: Jun 26 17:53:57 2023 GMT
+            Not After : Jun 25 17:53:57 2024 GMT
+        Subject: C=IN, ST=Jawa barat, O=iot, OU=iot, CN=AlfianMI/emailAddress=sulivian321@gmail.com
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:84:b3:5d:19:72:81:55:98:6a:b8:1d:5c:3c:63:
+                    1b:91:c5:4c:2f:28:36:03:10:7d:e7:f7:a3:00:1a:
+                    63:fa:36:c6:84:57:91:cc:3e:de:3c:02:3f:2c:16:
+                    ad:18:d4:1d:48:fb:4f:77:89:d7:9e:67:49:33:e3:
+                    5f:83:d8:8a:86
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                8E:AF:65:91:BE:91:93:41:5F:31:6A:82:77:64:14:FA:89:07:A3:5A
+            X509v3 Authority Key Identifier: 
+                C9:2A:6E:31:55:35:0C:78:1A:CE:99:EC:F0:35:45:5D:5F:BC:5C:80
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:44:02:20:63:89:71:3e:33:79:68:49:4a:9d:00:f8:d4:e3:
+        fa:24:ad:fb:39:07:a0:20:da:c8:a4:11:f6:ca:b3:24:6e:47:
+        02:20:77:5c:16:1f:90:02:d7:4e:dd:ff:c9:57:87:85:1a:ec:
+        21:34:d1:d8:eb:d7:ee:80:fd:4e:e5:1a:0d:69:13:2f
+-----BEGIN CERTIFICATE-----
+MIICRTCCAeygAwIBAgIBATAKBggqhkjOPQQDAjCBkjELMAkGA1UEBhMCSU4xEzAR
+BgNVBAgMCkphd2EgYmFyYXQxGTAXBgNVBAcMEEthYnVwYXRlbiBCZWthc2kxDDAK
+BgNVBAoMA2lvdDEMMAoGA1UECwwDaW90MREwDwYDVQQDDAhBbGZpYW5NSTEkMCIG
+CSqGSIb3DQEJARYVc3VsaXZpYW4zMjFAZ21haWwuY29tMB4XDTIzMDYyNjE3NTM1
+N1oXDTI0MDYyNTE3NTM1N1owdzELMAkGA1UEBhMCSU4xEzARBgNVBAgMCkphd2Eg
+YmFyYXQxDDAKBgNVBAoMA2lvdDEMMAoGA1UECwwDaW90MREwDwYDVQQDDAhBbGZp
+YW5NSTEkMCIGCSqGSIb3DQEJARYVc3VsaXZpYW4zMjFAZ21haWwuY29tMFkwEwYH
+KoZIzj0CAQYIKoZIzj0DAQcDQgAEhLNdGXKBVZhquB1cPGMbkcVMLyg2AxB95/ej
+ABpj+jbGhFeRzD7ePAI/LBatGNQdSPtPd4nXnmdJM+Nfg9iKhqNNMEswCQYDVR0T
+BAIwADAdBgNVHQ4EFgQUjq9lkb6Rk0FfMWqCd2QU+okHo1owHwYDVR0jBBgwFoAU
+ySpuMVU1DHgazpns8DVFXV+8XIAwCgYIKoZIzj0EAwIDRwAwRAIgY4lxPjN5aElK
+nQD41OP6JK37OQegINrIpBH2yrMkbkcCIHdcFh+QAtdO3f/JV4eFGuwhNNHY69fu
+gP1O5RoNaRMv
+-----END CERTIFICATE-----

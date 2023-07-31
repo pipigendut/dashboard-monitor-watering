@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center mb-4">
+        <div class="row justify-content-center mb-3">
             <h3 class="text-center">Automatic Watering & Monitoring</h3>
         </div>
         <div class="row justify-content-center mb-4">
-            <div class="col-md-6">
+            <div class="col-md-6" style="padding: 8px;">
                 <div class="card">
                     <div class="card-header">Sensor Waterflow</div>
                     <div class="card-body">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="padding: 8px;">
                 <div class="card">
                     <div class="card-header">Sensor Ultrasonik</div>
                     <div class="card-body">
@@ -24,9 +24,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6" style="padding: 8px;">
                 <div class="card">
                     <div class="card-header">Sensor Kelembapan Tanah</div>
                     <div class="card-body">
@@ -36,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="padding: 8px;">
                 <div class="card">
                     <div class="card-header">Sensor Hujan</div>
                     <div class="card-body">

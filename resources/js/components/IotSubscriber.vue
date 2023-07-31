@@ -1,9 +1,12 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-3">
+        <div class="row justify-content-center mb-4">
+            <h3 class="text-center">Automatic Watering & Monitoring</h3>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Water Flow</div>
+                    <div class="card-header">Sensor Waterflow</div>
                     <div class="card-body">
                         <div id="water-flow">
                             <div>-</div>
@@ -11,9 +14,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Ultra Sonic</div>
+                    <div class="card-header">Sensor Ultrasonik</div>
                     <div class="card-body">
                         <div id="ultra-sonic">
                             <div>-</div>
@@ -21,9 +24,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Soil Mosture</div>
+                    <div class="card-header">Sensor Kelembapan Tanah</div>
                     <div class="card-body">
                         <div id="soil-mosture">
                             <div>-</div>
@@ -31,9 +36,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Rain Censor</div>
+                    <div class="card-header">Sensor Hujan</div>
                     <div class="card-body">
                         <div id="rain-censor">
                             <div>-</div>
